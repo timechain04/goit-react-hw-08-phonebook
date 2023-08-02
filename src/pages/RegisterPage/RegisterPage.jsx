@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useUserSignupMutation } from 'redux/api/AuthApi';
 import {Flex, Box, FormControl, FormLabel, Input, InputGroup, InputRightElement, Stack, Button,
 } from '@chakra-ui/react';
@@ -10,7 +10,7 @@ const SignupView = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userSignup, { isSuccess }] = useUserSignupMutation();
+  const [userSignup, ] = useUserSignupMutation();
 
   const handleInputChange = ({ currentTarget: { name, value } }) => {
     switch (name) {
@@ -53,7 +53,7 @@ borderRadius={'30px'}
     bgGradient='linear(to-r, green.500, gray.400, blue.300)'>
     <Flex 
     >
-      {isSuccess && <Navigate to="/contacts" replace={true} />}
+
 
       <Stack mx={'auto'}
       marginTop={'100px'} >
